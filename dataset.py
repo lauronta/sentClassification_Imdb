@@ -1,4 +1,5 @@
 import os
+import numpy as np
 
 NB_DOC_MAX = 1000 
 IMDB_CLASSES  = ['neg','pos']
@@ -22,7 +23,7 @@ def load_data_film(datapath, classes=IMDB_CLASSES, max_size=NB_DOC_MAX):
             c+=1
             if max_size !=None and c>=max_size: break
 
-    return txts, files, filelabels
+    return np.array(txts), np.array(files), np.array(filelabels)
     #     c+=1
     #     if train_max_size !=None and c>train_max_size: break
 
